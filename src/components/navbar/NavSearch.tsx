@@ -1,6 +1,6 @@
 'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { Input } from '../ui/input';
 
@@ -26,17 +26,19 @@ const NavSearch = () => {
   }, [searchParams]);
   return (
     <>
-      <Input
-        value={search}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          handleSearch(event.target.value);
-          setSearch(event.target.value);
-        }}
-        name=''
-        type='type'
-        placeholder='Search product...'
-        className='max-w-xs dark:bg-muted'
-      />
+      <Suspense>
+        <Input
+          value={search}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            handleSearch(event.target.value);
+            setSearch(event.target.value);
+          }}
+          name=''
+          type='type'
+          placeholder='Search product...'
+          className='max-w-xs dark:bg-muted'
+        />
+      </Suspense>
     </>
   );
 };

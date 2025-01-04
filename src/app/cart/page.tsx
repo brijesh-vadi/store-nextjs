@@ -1,7 +1,11 @@
+import { Suspense } from 'react';
+
 const CartPage = () => {
   return (
     <>
-      <h1>Cart Page</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <h1>Cart Page</h1>
+      </Suspense>
     </>
   );
 };

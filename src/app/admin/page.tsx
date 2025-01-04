@@ -1,7 +1,11 @@
+import { Suspense } from 'react';
+
 const AdminPage = () => {
   return (
     <>
-      <h1>Admin Page</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <h1>Admin Page</h1>
+      </Suspense>
     </>
   );
 };

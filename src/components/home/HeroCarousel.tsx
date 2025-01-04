@@ -18,7 +18,7 @@ const HeroCarousel = () => {
               <CarouselItem key={index}>
                 <Card>
                   <CardContent className='p-2'>
-                    <Image src={image} alt='hero image' className='h-[24rem] w-full rounded-md object-cover' />
+                    <Image src={image} alt='hero image' className='h-[24rem] w-full rounded-md object-cover' priority />
                   </CardContent>
                 </Card>
               </CarouselItem>

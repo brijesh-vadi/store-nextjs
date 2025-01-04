@@ -1,7 +1,11 @@
+import { Suspense } from 'react';
+
 const OrdersPage = () => {
   return (
     <>
-      <h1>Orders Page</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <h1>Orders Page</h1>
+      </Suspense>
     </>
   );
 };

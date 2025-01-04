@@ -1,7 +1,11 @@
+import { Suspense } from 'react';
+
 const FavoritesPage = () => {
   return (
     <>
-      <h1>Favorites Page</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <h1>Favorites Page</h1>
+      </Suspense>
     </>
   );
 };
